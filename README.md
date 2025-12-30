@@ -6,7 +6,7 @@ The site is built using **plain HTML and CSS** and is hosted for free using **Gi
 It showcases my game projects, visuals, and experiments with a focus on clean design and performance.
 
 ## 🌐 Live Website
-https://yourusername.github.io/
+https://lightfrosn.github.io/
 
 ## 🎮 What This Site Showcases
 - Game projects developed using **Unity**
