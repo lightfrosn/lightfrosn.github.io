@@ -20,5 +20,3 @@ https://lightfrosn.github.io/
 - GitHub Pages (hosting)
 
 No frameworks, no build tools — just lightweight static files.
-
-## 📁 Project Structure
