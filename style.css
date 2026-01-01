@@ -1,157 +1,119 @@
-/* RESET */
+/* ===============================
+   RESET & BASE
+================================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* GLOBAL */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle at top, #1a1a1a 0%, #0e0e0e 60%);
-    color: #eaeaea;
-    line-height: 1.6;
+    font-family: system-ui, sans-serif;
+    background: radial-gradient(circle at top, #141414 0%, #090909 70%);
+    color: #d6d6d6;
 }
 
-h1,
-h2,
-h3 {
-    font-weight: 600;
-}
-
-h2 {
-    font-size: 1.8rem;
-    letter-spacing: 0.5px;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
-
-section {
-    padding: 60px 10%;
-}
-
-section:not(.projects) {
-    margin-bottom: 40px;
-}
-
-/* HERO */
-.hero {
-    height: 70vh;
-    padding: 40px 10%;
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(12px);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    z-index: 1000;
 }
 
-.hero h1 {
-    font-size: 3rem;
+.nav-logo {
+    position: absolute;
+    left: 32px;
+    font-weight: 700;
+    color: #aaa;
 }
 
-.hero p {
-    margin-top: 10px;
-    color: #bdbdbd;
+.nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
 }
 
-.hero-note {
-    margin-top: 12px;
+/* ===============================
+   NAV LINKS + ICONS
+================================ */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #7f7f7f;
     font-size: 0.9rem;
-    color: #9a9a9a;
-}
-
-/* ABOUT */
-.about p {
-    max-width: 800px;
-    margin-top: 20px;
-    color: #cfcfcf;
-}
-
-.about h2 {
     position: relative;
+    transition: color 0.25s ease;
 }
 
-.about h2::after {
+/* SVG ICON STYLE */
+.nav-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    opacity: 0.85;
+}
+
+/* ACTIVE */
+.nav-links a.active {
+    color: #f2f2f2;
+    text-shadow: 0 0 10px rgba(255,255,255,0.25);
+}
+
+/* UNDERLINE */
+.nav-links a::after {
     content: "";
-    display: block;
-    width: 40px;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
     height: 2px;
     background: #ffffff;
-    margin-top: 8px;
-    margin-left: 2px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    transition: width 0.35s ease;
 }
 
-.skills {
-    border-left: 2px solid #1f1f1f;
-    padding: 30px 10%;
-    color: #a0a0a0;
-    font-size: 0.9rem;
-}
-
-/* PROJECTS */
-.projects h2 {
-    margin-bottom: 40px;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background: #161616;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    will-change: transform;
-}
-
-.project-card img {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
-    display: block;
-    transition: transform 0.4s ease;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
 }
 
-.project-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+/* ===============================
+   SECTIONS
+================================ */
+.section {
+    min-height: 100vh;
+    padding: 120px 10%;
 }
 
-.project-info {
-    padding: 20px;
-    transition: transform 0.3s ease;
+.scroll-section {
+    min-height: auto;
 }
 
-.project-card:hover .project-info {
-    transform: translateY(-4px);
+/* ===============================
+   HERO
+================================ */
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.project-info p {
-    margin-top: 10px;
-    color: #bdbdbd;
-}
-
-/* FOOTER */
-footer {
+.glass-panel {
+    background: rgba(255,255,255,0.06);
+    border-radius: 18px;
+    padding: 48px 64px;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.12);
     text-align: center;
-    padding: 30px;
-    color: #777;
-    font-size: 0.9rem;
-    border-top: 1px solid #1f1f1f;
-}
-
-footer a {
-    color: #bdbdbd;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    color: #ffffff;
 }
