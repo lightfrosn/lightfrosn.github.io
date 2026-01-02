@@ -13,7 +13,19 @@ body {
     overflow: hidden;
 }
 
-/* NAVBAR */
+/* PIXEL FONT GLOBAL (EXCEPT NAVBAR) */
+.section,
+.section h1,
+.section h2,
+.section p,
+.section li {
+    font-family: "Jersey 20", sans-serif;
+    letter-spacing: 0.6px;
+}
+
+/* =======================
+   NAVBAR (UNCHANGED)
+======================= */
 .navbar {
     position: fixed;
     top: 0;
@@ -30,29 +42,27 @@ body {
     margin: 0 auto;
     padding: 0 32px;
     display: flex;
-    justify-content: center; /* center links horizontally in the bar */
-    align-items: center;            /* vertically center everything */
-    gap: 32px;                      /* spacing between logo and links */
-    padding-left: 160px; /* reserve space so centered links don't overlap the left logo */
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding-left: 160px;
 }
 
-/* LOGO */
 .nav-logo {
-    display: flex;
-    align-items: center;            /* vertically center image + text */
-    gap: 14px;
-    font-size: 1.15rem;
-    font-weight: 700;  
-    /* pin the logo to the far left of the navbar (absolute relative to .navbar) */
     position: absolute;
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.35rem;
+    font-weight: 700;
 }
 
 .nav-logo img {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
 }
 
 /* NAV LINKS */
@@ -60,19 +70,18 @@ body {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 40px;
-    /* keep links on a single line */
+    gap: 52px;
     white-space: nowrap;
 }
 
 .nav-links a {
-    display: flex;                  /* make link a flex container */
-    align-items: center;            /* vertically align image + text */
-    gap: 8px;                       /* spacing between image and text */
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: #8c8c8c;
     text-decoration: none;
     font-size: 1.15rem;
-    font-weight: 500;               /* slightly bold, less than logo */
+    font-weight: 500;
     position: relative;
     padding: 6px 2px;
     transition: color 0.25s ease;
@@ -89,7 +98,8 @@ body {
     transition: width 0.35s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: #ffffff;
 }
 
@@ -98,54 +108,14 @@ body {
     width: 100%;
 }
 
-.nav-links a.active {
-    color: #ffffff;
-}
-
 .nav-links img {
     width: 38px;
     height: 38px;
 }
 
-/* ABOUT */
-.about {
-    background: 
-        linear-gradient(to left, rgba(11,11,11,0.85), rgba(11,11,11,0.35)), /* slightly less faded */
-        url("images/myImage.png") right center / cover no-repeat;
-}
-
-.about-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.about-text {
-    max-width: 520px;
-}
-
-.about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 16px;
-}
-
-.about-text p {
-    margin-bottom: 14px;
-    color: #c9c9c9;
-}
-
-/* CONTACT */
-.contact ul {
-    list-style: none;
-    line-height: 2;
-}
-
-.contact a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-/* SLIDES */
+/* =======================
+   SLIDES
+======================= */
 .slides {
     position: absolute;
     top: 72px;
@@ -176,13 +146,16 @@ body {
     height: 100%;
 }
 
-/* HERO */
+/* =======================
+   HERO
+======================= */
 .hero-card {
     background: rgba(255,255,255,0.04);
     border-radius: 18px;
     padding: 48px 64px;
     border: 1px solid rgba(255,255,255,0.08);
     text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
 .hero-card h1 {
@@ -190,24 +163,77 @@ body {
     margin-bottom: 10px;
 }
 
-/* ABOUT */
+/* =======================
+   ABOUT (FIXED & CLEAN)
+======================= */
 .about {
-    background: 
-        linear-gradient(to left, rgba(11,11,11,0.3), rgba(11,11,11,0.1)), /* soft dark overlay */
-        url("images/myImage.png") right center / cover no-repeat;
+    position: relative;
+    background:
+        linear-gradient(
+            to left,
+            rgba(11,11,11,0.05) 70%,
+            rgba(11,11,11,0.55) 35%,
+            rgba(11,11,11,0.92) 0%
+        ),
+        url("images/MyPcImage.png") right center / auto 100% no-repeat;
 }
 
+/* ABOUT CONTENT */
+.about-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 520px;
+}
+
+.about-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+    color: #c9c9c9;
+    line-height: 1.6;
+}
+
+/* =======================
+   CONTACT
+======================= */
+.contact ul {
+    list-style: none;
+    line-height: 2;
+}
+
+.contact a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+/* Tablet & Mobile background switch */
 @media (max-width: 900px) {
     .about {
         background:
-            linear-gradient(to bottom, rgba(11,11,11,0.3), rgba(11,11,11,0.1)), /* soft overlay */
-            url("images/myImage.png") center / cover no-repeat;
+            linear-gradient(
+                to bottom,
+                rgba(11,11,11,0.6),
+                rgba(11,11,11,0.92)
+            ),
+            url("images/MyPhoneImage.png") center bottom / cover no-repeat;
     }
 }
 
 @media (max-width: 600px) {
     .nav-links {
         font-size: 0.85rem;
+        gap: 28px;
     }
 
     .hero-card {
