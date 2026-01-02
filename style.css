@@ -1,19 +1,38 @@
-/* RESET */
+/* =======================
+   RESET
+======================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BASE */
+/* =======================
+   BASE
+======================= */
 body {
     font-family: system-ui, sans-serif;
     background: #0b0b0b;
     color: #e0e0e0;
-    overflow: hidden;
 }
 
-/* PIXEL FONT GLOBAL (EXCEPT NAVBAR) */
+/* Lock slides only on desktop */
+@media (min-width: 901px) {
+    body {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+
+/* =======================
+   PIXEL FONT (CONTENT ONLY)
+======================= */
 .section,
 .section h1,
 .section h2,
@@ -132,7 +151,9 @@ body {
     transition: transform 0.7s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* CONTAINER */
+/* =======================
+   CONTAINER
+======================= */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -164,7 +185,7 @@ body {
 }
 
 /* =======================
-   ABOUT (FIXED & CLEAN)
+   ABOUT (DESKTOP)
 ======================= */
 .about {
     position: relative;
@@ -214,11 +235,21 @@ body {
 }
 
 /* =======================
-   RESPONSIVE
+   RESPONSIVE (MOBILE)
 ======================= */
-
-/* Tablet & Mobile background switch */
 @media (max-width: 900px) {
+
+    .slides {
+        position: relative;
+        height: auto;
+    }
+
+    .section {
+        position: relative;
+        height: auto;
+        padding: 64px 0;
+    }
+
     .about {
         background:
             linear-gradient(
@@ -226,7 +257,7 @@ body {
                 rgba(11,11,11,0.6),
                 rgba(11,11,11,0.92)
             ),
-            url("images/MyPhoneImage.png") center bottom / cover no-repeat;
+            url("images/MyPhoneImage.png") center top / cover no-repeat;
     }
 }
 

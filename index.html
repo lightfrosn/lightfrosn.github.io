@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <title>Animesh Gautam | Game Developer</title>
@@ -10,132 +11,145 @@
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="nav-container">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
 
-        <!-- LOGO (LEFT) -->
-        <div class="nav-logo">
-            <img src="images/navlogo.png" alt="Logo">
-            <span>My Portfolio</span>
-        </div>
-
-        <!-- CENTERED NAV -->
-        <ul class="nav-links">
-            <li><a href="#home" class="active"><img src="images/homelogo.png" alt="Logo">
-            <span>Home</span></a></li>
-            <li><a href="#about"><img src="images/aboutmelogo.png" alt="Logo">
-            <span>About Me</span></a></li>
-            <li><a href="#work"><img src="images/worklogo.png" alt="Logo">
-            <span>Work</span></a></li>
-            <li><a href="#skills"><img src="images/skillslogo.png" alt="Logo">
-            <span>Skills</span></a></li>
-            <li><a href="#resources"><img src="images/resourceslogo.png" alt="Logo">
-            <span>Resources</span></a></li>
-            <li><a href="#blog"><img src="images/bloglogo.png" alt="Logo">
-            <span>Blog</span></a></li>
-            <li><a href="#experiments"><img src="images/experimentslogo.png" alt="Logo">
-            <span>Experiments</span></a></li>
-            <li><a href="#contact"><img src="images/contactlogo.png" alt="Logo">
-            <span>Contact</span></a></li>
-        </ul>
-
-    </div>
-</nav>
-
-<!-- MAIN -->
-<main class="slides">
-
-    <section id="home" class="section active">
-        <div class="container center">
-            <div class="hero-card">
-                <h1>Animesh Gautam</h1>
-                <p>Game Developer · Unity · Experiments · Systems</p>
+            <!-- LOGO (LEFT) -->
+            <div class="nav-logo">
+                <img src="images/navlogo.png" alt="Logo">
+                <span>My Portfolio</span>
             </div>
-        </div>
-    </section>
 
-    <section id="about" class="section about">
-        <div class="about-overlay"></div>
-        <div class="container about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>
-                    I’m a game developer focused on building clean systems,
-                    responsive mechanics, and performance-friendly experiences.
-                </p>
-                <p>
-                    My work revolves around Unity, gameplay architecture,
-                    experimentation, and polishing feel over flash.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="work" class="section">
-        <div class="container center"><h2>Work</h2></div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container center"><h2>Skills</h2></div>
-    </section>
-
-    <section id="resources" class="section">
-        <div class="container center"><h2>Resources</h2></div>
-    </section>
-
-    <section id="blog" class="section">
-        <div class="container center"><h2>Blog</h2></div>
-    </section>
-
-    <section id="experiments" class="section">
-        <div class="container center"><h2>Experiments</h2></div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container center contact">
-            <h2>Contact</h2>
-            <ul>
-                <li>GitHub: <a href="https://github.com/lightfrosn" target="_blank">github.com/lightfrosn</a></li>
-                <li>Email: <a href="mailto:lightfrosn@gmail.com">lightfrosn@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/animesh-gautam-37996b167/" target="_blank">linkedin.com/in/animesh-gautam</a></li>
-                <li>Phone: +91 6239529044</li>
+            <!-- CENTERED NAV -->
+            <ul class="nav-links">
+                <li><a href="#home" class="active"><img src="images/homelogo.png" alt="Logo">
+                        <span>Home</span></a></li>
+                <li><a href="#about"><img src="images/aboutmelogo.png" alt="Logo">
+                        <span>About Me</span></a></li>
+                <li><a href="#work"><img src="images/worklogo.png" alt="Logo">
+                        <span>Work</span></a></li>
+                <li><a href="#skills"><img src="images/skillslogo.png" alt="Logo">
+                        <span>Skills</span></a></li>
+                <li><a href="#resources"><img src="images/resourceslogo.png" alt="Logo">
+                        <span>Resources</span></a></li>
+                <li><a href="#blog"><img src="images/bloglogo.png" alt="Logo">
+                        <span>Blog</span></a></li>
+                <li><a href="#experiments"><img src="images/experimentslogo.png" alt="Logo">
+                        <span>Experiments</span></a></li>
+                <li><a href="#contact"><img src="images/contactlogo.png" alt="Logo">
+                        <span>Contact</span></a></li>
             </ul>
+
         </div>
-    </section>
+    </nav>
 
-</main>
+    <!-- MAIN -->
+    <main class="slides">
 
-<!-- SLIDE LOGIC -->
-<script>
-(() => {
-    const sections = document.querySelectorAll(".section");
-    const links = document.querySelectorAll(".nav-links a");
-    let current = 0;
+        <section id="home" class="section active">
+            <div class="container center">
+                <div class="hero-card">
+                    <h1>Animesh Gautam</h1>
+                    <p>Game Developer · Unity · Experiments · Systems</p>
+                </div>
+            </div>
+        </section>
 
-    function show(index) {
-        sections.forEach((s, i) => {
-            s.style.transform = `translateX(${(i - index) * 100}%)`;
-            s.classList.toggle("active", i === index);
-        });
+        <section id="about" class="section about">
+            <div class="about-image-mobile"></div>
 
-        links.forEach((l, i) => {
-            l.classList.toggle("active", i === index);
-        });
+            <div class="container about-content">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>
+                        I’m a game developer focused on building clean systems,
+                        responsive mechanics, and performance-friendly experiences.
+                    </p>
+                    <p>
+                        My work revolves around Unity, gameplay architecture,
+                        experimentation, and polishing feel over flash.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        current = index;
-    }
+        <section id="work" class="section">
+            <div class="container center">
+                <h2>Work</h2>
+            </div>
+        </section>
 
-    links.forEach((link, i) => {
-        link.addEventListener("click", e => {
-            e.preventDefault();
-            show(i);
-        });
-    });
+        <section id="skills" class="section">
+            <div class="container center">
+                <h2>Skills</h2>
+            </div>
+        </section>
 
-    show(0);
-})();
-</script>
+        <section id="resources" class="section">
+            <div class="container center">
+                <h2>Resources</h2>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <div class="container center">
+                <h2>Blog</h2>
+            </div>
+        </section>
+
+        <section id="experiments" class="section">
+            <div class="container center">
+                <h2>Experiments</h2>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container center contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>GitHub: <a href="https://github.com/lightfrosn" target="_blank">github.com/lightfrosn</a></li>
+                    <li>Email: <a href="mailto:lightfrosn@gmail.com">lightfrosn@gmail.com</a></li>
+                    <li>LinkedIn: <a href="https://www.linkedin.com/in/animesh-gautam-37996b167/"
+                            target="_blank">linkedin.com/in/animesh-gautam</a></li>
+                    <li>Phone: +91 6239529044</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SLIDE LOGIC -->
+    <script>
+        (() => {
+            const sections = document.querySelectorAll(".section");
+            const links = document.querySelectorAll(".nav-links a");
+            let current = 0;
+
+            function show(index) {
+                sections.forEach((s, i) => {
+                    s.style.transform = `translateX(${(i - index) * 100}%)`;
+                    s.classList.toggle("active", i === index);
+                });
+
+                links.forEach((l, i) => {
+                    l.classList.toggle("active", i === index);
+                });
+
+                current = index;
+            }
+
+            links.forEach((link, i) => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    show(i);
+                });
+            });
+
+            show(0);
+        })();
+    </script>
 
 </body>
+
 </html>
